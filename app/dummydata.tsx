@@ -79,3 +79,59 @@ export const categories = [
     cat: "Clothes"
   }
 ]
+
+export const settings = [
+  {
+    name: "Personal",
+    lists: [
+      {
+        id: 1,
+        name: "Profile",
+        href: "/profile"
+      },
+      {
+        id: 2,
+        name: "Shipping Address"
+      },
+      {
+        id: 3,
+        name: "Payment methods"
+      },
+    ]
+  },
+  {
+    name: "Shop",
+    lists: [
+      {
+        id: 1,
+        name: "Country"
+      },
+      {
+        id: 2,
+        name: "Currency"
+      },
+      {
+        id: 3,
+        name: "Sizes"
+      },
+      {
+        id: 4,
+        name: "Terms and conditions"
+      },
+    ]
+  },
+  {
+    name: "Account",
+    lists: [
+      {
+        id: 1,
+        name: "Language",
+        href: "/language"
+      },
+      {
+        id: 2,
+        name: "About Slada"
+      }
+    ]
+  },
+]
