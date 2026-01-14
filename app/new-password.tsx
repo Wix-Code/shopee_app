@@ -1,12 +1,8 @@
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { Link } from "expo-router";
-import { useState } from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function NewPassword() {
-  const [selectedOption, setSelectedOption] = useState<"email" | "sms">("sms");
-
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
       <View style={styles.container}>
@@ -27,60 +23,28 @@ export default function NewPassword() {
             Please, setup a new password for{"\n"}your account
           </Text>
           
-          <View style={styles.optionsContainer}>
-            <Pressable 
-              style={[
-                styles.option,
-                selectedOption === "sms" && styles.optionSelected
-              ]}
-              onPress={() => setSelectedOption("sms")}
-            >
-              <Text style={[
-                styles.optionText,
-                selectedOption === "sms" && styles.optionTextSelected
-              ]}>
-                SMS
-              </Text>
-              <View style={[
-                styles.checkbox,
-                selectedOption === "sms" ? styles.checkboxSelected : styles.checkboxUnselected
-              ]}>
-                {selectedOption === "sms" && (
-                  <FontAwesome5 name="check" size={12} color="white" />
-                )}
-              </View>
-            </Pressable>
+          <TextInput 
+            style={styles.input} 
+            placeholder='New Password'
+            placeholderTextColor="#999999"
+            secureTextEntry
+            autoCapitalize="none"
+          />
 
-            <Pressable 
-              style={[
-                styles.option,
-                selectedOption === "email" && styles.optionSelected
-              ]}
-              onPress={() => setSelectedOption("email")}
-            >
-              <Text style={[
-                styles.optionText,
-                selectedOption === "email" && styles.optionTextSelected
-              ]}>
-                Email
-              </Text>
-              <View style={[
-                styles.checkbox,
-                selectedOption === "email" ? styles.checkboxSelected : styles.checkboxUnselected
-              ]}>
-                {selectedOption === "email" && (
-                  <FontAwesome5 name="check" size={12} color="white" />
-                )}
-              </View>
-            </Pressable>
-          </View>
+          <TextInput
+            style={styles.input} 
+            placeholder='Repeat Password'
+            placeholderTextColor="#999999"
+            secureTextEntry
+            autoCapitalize="none"
+          />
         </View>
 
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
-          <Link href="/password-recovery-code" asChild>
+          <Link href="/ready-card" asChild>
             <Pressable style={styles.nextButton}>
-              <Text style={styles.nextButtonText}>Next</Text>
+              <Text style={styles.nextButtonText}>Save</Text>
             </Pressable>
           </Link>
           <Link href="/" asChild>
@@ -97,7 +61,7 @@ export default function NewPassword() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#F5F7FF",
+    backgroundColor: "#ffffff",
   },
   container: {
     flex: 1,
@@ -112,7 +76,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: "center",
+    //justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 20,
   },
@@ -150,52 +114,20 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: "center",
     fontFamily: "Raleway_400Regular",
-    marginBottom: 32,
+    marginBottom: 10,
     lineHeight: 22,
   },
-  optionsContainer: {
-    gap: 12,
-    width: "100%",
-    maxWidth: 240,
-  },
-  option: {
-    backgroundColor: "#FFEBEB",
-    paddingVertical: 14,
+  input: {
+    backgroundColor: "#F8F8F8",
     paddingHorizontal: 20,
-    borderRadius: 30,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  optionSelected: {
-    backgroundColor: "#E5EBFC",
-  },
-  optionText: {
-    color: "#666666",
-    fontSize: 15,
-    fontFamily: "Raleway_500Medium",
-  },
-  optionTextSelected: {
-    color: "#0042FF",
-    fontFamily: "Raleway_700Bold",
-  },
-  checkbox: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 2,
-    borderColor: "#ffffff",
-    position: "absolute",
-    right: 16,
-  },
-  checkboxSelected: {
-    backgroundColor: "#0042FF",
-  },
-  checkboxUnselected: {
-    backgroundColor: "#F8CECE",
+    paddingVertical: 16,
+    width: "100%",
+    borderRadius: 10,
+    textAlign: "center",
+    marginTop: 10,
+    fontSize: 16,
+    fontFamily: "Raleway_400Regular",
+    color: "#202020",
   },
   bottomSection: {
     paddingBottom: 30,

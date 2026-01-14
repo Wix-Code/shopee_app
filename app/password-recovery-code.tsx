@@ -32,7 +32,7 @@ export default function PasswordRecoveryCode() {
 
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
-          <Link href="/create-account" asChild>
+          <Link href="/new-password" asChild>
             <Pressable style={styles.nextButton}>
               <Text style={styles.nextButtonText}>Send Again</Text>
             </Pressable>
