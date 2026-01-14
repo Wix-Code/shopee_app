@@ -1,6 +1,6 @@
 import Feather from '@expo/vector-icons/Feather';
 import { Link } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -19,17 +19,17 @@ export default function Index() {
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
           <Link href="/create-account" asChild>
-            <View style={styles.start}>
+            <Pressable style={styles.start}>
               <Text style={styles.text}>Let's get started</Text>
-            </View>
+            </Pressable>
           </Link>
           <Link href="/login" asChild>
-            <View style={styles.loginLink}>
+            <Pressable style={styles.loginLink}>
               <Text style={styles.acc}>I already have an account</Text>
               <View style={styles.link}>
                 <Feather name="arrow-right" size={18} color="white" />
               </View>
-            </View>
+            </Pressable>
           </Link>
         </View>
       </View>

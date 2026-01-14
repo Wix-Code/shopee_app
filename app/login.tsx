@@ -1,33 +1,47 @@
+import Octicons from '@expo/vector-icons/Octicons';
 import { Link } from "expo-router";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
       <View style={styles.container}>
-        {/* Main Content - Centered */}
+        {/* Decorative Images */}
+        <View style={styles.top}>
+          <Image source={require("../assets/images/b.png")} />
+          <Image style={styles.pic} source={require("../assets/images/b1.png")} />
+        </View>
+        <View style={styles.right}>
+          <Image source={require("../assets/images/b2.png")} />
+        </View>
+        
+        {/* Main Content */}
         <View style={styles.content}>
-          <View style={styles.image}>
-            <Image source={require("../assets/images/logo.png")} />
+          <Text style={styles.shop}>Login</Text>
+          <View style={styles.greetingRow}>
+            <Text style={styles.store}>Good to see you back! </Text>
+            <Octicons name="heart-fill" size={16} color="#202020" />
           </View>
-          <Text style={styles.shop}>Shoppee</Text>
-          <Text style={styles.store}>Beautiful eCommerce UI Kit{'\n'}for your online store</Text>
+          <TextInput 
+            style={styles.input} 
+            placeholder='Email'
+            placeholderTextColor="#999999"
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
         </View>
 
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
           <Link href="/create-account" asChild>
-            <View style={styles.start}>
-              <Text style={styles.text}>Let's get started</Text>
-            </View>
+            <Pressable style={styles.start}>
+              <Text style={styles.text}>Next</Text>
+            </Pressable>
           </Link>
-          <Link href="/login" asChild>
-            <View style={styles.loginLink}>
-              <Text style={styles.acc}>I already have an account</Text>
-              <View></View>
-            </View>
-          </Link>
+          <Pressable style={styles.loginLink}>
+            <Text style={styles.acc}>Cancel</Text>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
@@ -41,55 +55,62 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingHorizontal: 20,
     justifyContent: "space-between",
+  },
+  top: {
+    position: "relative",
+  },
+  pic: {
+    position: "absolute",
+  },
+  right: {
+    position: "absolute",
+    top: 100,
+    right: 0,
   },
   content: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  image: {
-    width: 134,
-    height: 134,
-    borderRadius: 67,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.09,
-    shadowRadius: 6,
-    elevation: 3,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ffffff",
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   shop: {
     color: "#202020",
-    fontSize: 48,
+    fontSize: 52,
     fontFamily: "Raleway_700Bold",
-    marginTop: 30,
-    marginBottom: 16,
+    marginBottom: 8,
+  },
+  greetingRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 30,
   },
   store: {
-    color: "#666666",
+    color: "#202020",
+    fontSize: 15,
+    fontFamily: "Raleway_400Regular",
+  },
+  input: {
+    backgroundColor: "#F8F8F8",
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    width: "100%",
+    borderRadius: 30,
     fontSize: 16,
     fontFamily: "Raleway_400Regular",
-    textAlign: "center",
-    lineHeight: 24,
+    color: "#202020",
   },
   bottomSection: {
-    paddingBottom: 20,
-    gap: 16,
+    paddingBottom: 30,
+    paddingHorizontal: 20,
+    gap: 12,
   },
   start: {
-    backgroundColor: "#004CFF",
+    backgroundColor: "#0042FF",
     width: "100%",
     paddingVertical: 16,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 12,
+    borderRadius: 30,
   },
   text: {
     color: "#ffffff",
@@ -97,12 +118,12 @@ const styles = StyleSheet.create({
     fontFamily: "Raleway_600SemiBold",
   },
   loginLink: {
-    paddingVertical: 12,
+    paddingVertical: 8,
     alignItems: "center",
   },
   acc: {
-    color: "#004CFF",
+    color: "#202020",
     fontSize: 15,
-    fontFamily: "Raleway_500Medium",
+    fontFamily: "Raleway_400Regular",
   },
 });
