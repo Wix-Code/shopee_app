@@ -39,9 +39,11 @@ export default function Login() {
               <Text style={styles.text}>Next</Text>
             </Pressable>
           </Link>
-          <Pressable style={styles.loginLink}>
-            <Text style={styles.acc}>Cancel</Text>
-          </Pressable>
+          <Link href="/password-recovery" asChild>
+            <Pressable style={styles.loginLink}>
+              <Text style={styles.acc}>Cancel</Text>
+            </Pressable>
+          </Link>
         </View>
       </View>
     </SafeAreaView>
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 30,
+    borderRadius: 16,
   },
   text: {
     color: "#ffffff",
