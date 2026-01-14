@@ -4,14 +4,16 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const sizeOptions = [
-  { id: 1, label: 'USD' },
-  { id: 2, label: 'EURO' },
-  { id: 3, label: 'NAIRA' },
-  { id: 4, label: 'RUB' },
+  { id: 1, label: 'English' },
+  { id: 2, label: 'French' },
+  { id: 3, label: 'German' },
+  { id: 4, label: 'Spannish' },
+  { id: 5, label: 'Portuguese' },
+  { id: 6, label: 'Chinnese' },
 ];
 
-export default function WishList() {
-  const [selectedSize, setSelectedSize] = useState(1); 
+export default function Language() {
+  const [selectedSize, setSelectedSize] = useState(1); // Default to US
 
   const handleSizeSelect = (sizeId: number) => {
     setSelectedSize(sizeId);
@@ -20,16 +22,17 @@ export default function WishList() {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <View style={styles.container}>
-  
+        {/* Fixed Header */}
         <View style={styles.header}>
           <Text style={styles.title}>Settings</Text>
         </View>
 
+        {/* Scrollable Content */}
         <ScrollView 
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          <Text style={styles.size}>Currency</Text>
+          <Text style={styles.size}>Language</Text>
           
           {sizeOptions.map((option) => {
             const isActive = selectedSize === option.id;

@@ -18,7 +18,7 @@ export default function RootLayout() {
   if (!fontsLoaded) return null;
 
   return (
-    <Stack>
+    <Stack screenOptions={{headerShown: false}}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
