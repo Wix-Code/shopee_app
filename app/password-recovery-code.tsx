@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { OtpInput } from "react-native-otp-entry";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function PasswordRecoveryCode() {
@@ -26,6 +27,7 @@ export default function PasswordRecoveryCode() {
             Enter 4-digits code we sent you{'\n'}on your phone number
           </Text>
           <Text style={styles.pass}>+98*******00</Text>
+          <OtpInput numberOfDigits={4} hideStick={false} onTextChange={(text) => console.log(text)} />
         </View>
 
         {/* Fixed Bottom Section */}
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: "center",
+    //justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 20,
   },
@@ -180,5 +182,6 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 16,
     fontFamily: "Raleway_700Bold",
+    marginBottom: 20
   }
 });
