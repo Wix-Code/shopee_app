@@ -1,9 +1,8 @@
-import Feather from '@expo/vector-icons/Feather';
 import { Link } from "expo-router";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
+export default function Login() {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
       <View style={styles.container}>
@@ -26,9 +25,7 @@ export default function Index() {
           <Link href="/login" asChild>
             <View style={styles.loginLink}>
               <Text style={styles.acc}>I already have an account</Text>
-              <View style={styles.link}>
-                <Feather name="arrow-right" size={18} color="white" />
-              </View>
+              <View></View>
             </View>
           </Link>
         </View>
@@ -86,14 +83,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     gap: 16,
   },
-  link: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: "#004CFF",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   start: {
     backgroundColor: "#004CFF",
     width: "100%",
@@ -110,9 +99,6 @@ const styles = StyleSheet.create({
   loginLink: {
     paddingVertical: 12,
     alignItems: "center",
-    flexDirection: "row",
-    gap: 12,
-    justifyContent: "center"
   },
   acc: {
     color: "#004CFF",
