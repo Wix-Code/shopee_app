@@ -138,14 +138,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 24,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 2,
+    backgroundColor: "#ffffff",
+    boxShadow: "rgba(17, 17, 26, 0.1) 0px 0px 16px"
   },
   emptyTitle: {
     fontSize: 20,
