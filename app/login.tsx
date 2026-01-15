@@ -34,7 +34,7 @@ export default function Login() {
 
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
-          <Link href="/create-account" asChild>
+          <Link href="/wishlist" asChild>
             <Pressable style={styles.start}>
               <Text style={styles.text}>Next</Text>
             </Pressable>
