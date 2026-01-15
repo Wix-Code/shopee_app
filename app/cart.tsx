@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     paddingVertical: 16,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#F5F5F5",
     borderTopWidth: 1,
     borderTopColor: "#f0f0f0",
   },
