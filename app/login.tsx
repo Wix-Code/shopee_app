@@ -34,7 +34,7 @@ export default function Login() {
 
         {/* Fixed Bottom Section */}
         <View style={styles.bottomSection}>
-          <Link href="/recently-viewed" asChild>
+          <Link href="/search" asChild>
             <Pressable style={styles.start}>
               <Text style={styles.text}>Next</Text>
             </Pressable>
